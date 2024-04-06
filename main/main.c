@@ -499,6 +499,7 @@ void app_main(void)
 	lcdDrawString(&dev, fx24G, 2, 126, ascii, TFT_WHITE);
 
 	 // xTaskCreate(ST7789, "ST7789", 1024*6, (void *) &dev, 2, NULL);
+// test git
 
 	 while (1) {
 
