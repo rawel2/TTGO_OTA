@@ -1,8 +1,8 @@
-# Install script for directory: C:/Esp32_521/frameworks/esp-idf-v5.2.1/components/mbedtls/mbedtls
+# Install script for directory: D:/Esp32/frameworks/esp-idf-v5.2.1/components/mbedtls/mbedtls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TTGO_ota")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TTGO_OTA")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,14 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Esp32_521/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Esp32/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Esp32_521/workspace_521/TTGO_ota/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("C:/Esp32_521/workspace_521/TTGO_ota/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("C:/Esp32_521/workspace_521/TTGO_ota/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("D:/Esp32/workspace521/TTGO_OTA/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("D:/Esp32/workspace521/TTGO_OTA/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("D:/Esp32/workspace521/TTGO_OTA/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 

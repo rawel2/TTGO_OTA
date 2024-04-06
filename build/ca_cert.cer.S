@@ -1,4 +1,4 @@
-/* * Data converted from C:/Esp32_521/workspace_521/TTGO_ota/server_certs/ca_cert.cer
+/* * Data converted from D:/Esp32/workspace521/TTGO_OTA/server_certs/ca_cert.cer
  * (null byte appended)
  */
 .data

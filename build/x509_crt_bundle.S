@@ -1,4 +1,4 @@
-/* * Data converted from C:/Esp32_521/workspace_521/TTGO_ota/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from D:/Esp32/workspace521/TTGO_OTA/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

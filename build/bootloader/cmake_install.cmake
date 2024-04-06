@@ -1,4 +1,4 @@
-# Install script for directory: C:/Esp32_521/frameworks/esp-idf-v5.2.1/components/bootloader/subproject
+# Install script for directory: D:/Esp32/frameworks/esp-idf-v5.2.1/components/bootloader/subproject
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Esp32_521/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Esp32/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Esp32_521/workspace_521/TTGO_ota/build/bootloader/esp-idf/cmake_install.cmake")
+  include("D:/Esp32/workspace521/TTGO_OTA/build/bootloader/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Esp32_521/workspace_521/TTGO_ota/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Esp32/workspace521/TTGO_OTA/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
