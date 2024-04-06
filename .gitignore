@@ -1,2 +1,2 @@
-build/
+build/**
 esp_idf_components/
