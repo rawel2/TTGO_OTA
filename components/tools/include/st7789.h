@@ -4,16 +4,6 @@
 #include "driver/spi_master.h"
 #include "fontx.h"
 
-//#define RED				0xf800
-//#define GREEN			0x07e0
-//#define BLUE			0x001f
-//#define BLACK			0x0000
-//#define WHITE			0xffff
-//#define GRAY			0x8c51
-//#define YELLOW			0xFFE0
-//#define CYAN			0x07FF
-//#define PURPLE			0xF81F
-//#define ORANGE 			0xFC00
 
 #define TFT_BLACK       0x0000      /*   0,   0,   0 */
 #define TFT_NAVY        0x000F      /*   0,   0, 128 */
@@ -44,8 +34,8 @@
 
 #define DIRECTION0		0
 #define DIRECTION90		1
-#define DIRECTION180		2
-#define DIRECTION270		3
+#define DIRECTION180	2
+#define DIRECTION270	3
 
 
 typedef struct {

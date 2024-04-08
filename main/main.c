@@ -52,10 +52,7 @@
 
 #include "st7789.h"
 #include "fontx.h"
-#include "bmpfile.h"
-#include "decode_jpeg.h"
-#include "decode_png.h"
-#include "pngle.h"
+
 
 #include "tools.h"
 #include "lcd_tests.h"

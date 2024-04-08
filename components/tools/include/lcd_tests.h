@@ -22,10 +22,7 @@
 
 #include "st7789.h"
 #include "fontx.h"
-#include "bmpfile.h"
-#include "decode_jpeg.h"
-#include "decode_png.h"
-#include "pngle.h"
+
 
 TickType_t FillTest(TFT_t * dev, int width, int height);
 
@@ -53,11 +50,7 @@ TickType_t FillRectTest(TFT_t * dev, int width, int height);
 
 TickType_t ColorTest(TFT_t * dev, int width, int height);
 
-TickType_t BMPTest(TFT_t * dev, char * file, int width, int height);
 
-TickType_t JPEGTest(TFT_t * dev, char * file, int width, int height);
-
-TickType_t PNGTest(TFT_t * dev, char * file, int width, int height);
 
 TickType_t CodeTest(TFT_t * dev, FontxFile *fx, int width, int height);
 
