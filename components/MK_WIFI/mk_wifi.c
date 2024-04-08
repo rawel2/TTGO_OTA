@@ -49,6 +49,7 @@
 
 
 static portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
+
 #define PORT_ENTER_CRITICAL 	portENTER_CRITICAL(&mux)
 #define PORT_EXIT_CRITICAL 		portEXIT_CRITICAL(&mux)
 
@@ -78,8 +79,6 @@ static uint8_t use_my_sta_ssid;
 
 
 static uint8_t wifi_connected;
-
-
 
 
 void set_my_sta_ssid( char *assid, char * apass ) {
@@ -412,12 +411,6 @@ ESP_LOGW(TAG, "WIFI 8");
 }
 
 
-
-
-
-
-
-
 /*
  *	Sposoby u�ycia:
  *
@@ -452,20 +445,20 @@ uint8_t mk_wifi_scan( uint8_t * assid ) {
 	esp_wifi_scan_start(&scan_config, true);
 
 	uint16_t ap_num;
-	wifi_ap_record_t ap_records[20];
 	esp_wifi_scan_get_ap_num(&ap_num);
-	esp_wifi_scan_get_ap_records(&ap_num, ap_records);
-
-	printf("\n-------------------------------------------------------------------------\n");
-	printf("|               SSID  (%02d)        | Channel | RSSI |       MAC          |\n", ap_num);
-	printf("-------------------------------------------------------------------------\n");
-	for(int i = 0; i < ap_num; i++) {
-		printf("|%32s | %7d | %4d |  %02X:%02X:%02X:%02X:%02X:%02X |   \n", ap_records[i].ssid, ap_records[i].primary, ap_records[i].rssi , *ap_records[i].bssid, *(ap_records[i].bssid+1), *(ap_records[i].bssid+2), *(ap_records[i].bssid+3), *(ap_records[i].bssid+4), *(ap_records[i].bssid+5));
-	}
-	printf("-------------------------------------------------------------------------\n");
 
 
-//	if( !res ) esp_event_loop_delete_default();
+//	wifi_ap_record_t ap_records[20];
+//	esp_wifi_scan_get_ap_records(&ap_num, ap_records);
+//
+//	printf("\n-------------------------------------------------------------------------\n");
+//	printf("|               SSID  (%02d)        | Channel | RSSI |       MAC          |\n", ap_num);
+//	printf("-------------------------------------------------------------------------\n");
+//	for(int i = 0; i < ap_num; i++) {
+//		printf("|%32s | %7d | %4d |  %02X:%02X:%02X:%02X:%02X:%02X |   \n", ap_records[i].ssid, ap_records[i].primary, ap_records[i].rssi , *ap_records[i].bssid, *(ap_records[i].bssid+1), *(ap_records[i].bssid+2), *(ap_records[i].bssid+3), *(ap_records[i].bssid+4), *(ap_records[i].bssid+5));
+//	}
+//	printf("-------------------------------------------------------------------------\n");
+
 
 	return ap_num;
 }

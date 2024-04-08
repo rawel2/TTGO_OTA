@@ -1,4 +1,5 @@
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -6,10 +7,7 @@
 #include <ctype.h>
 #include <time.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -55,7 +53,6 @@
 
 
 #include "tools.h"
-#include "lcd_tests.h"
 
 #include "mk_fota_https.h"
 
@@ -171,147 +168,6 @@ void on_button_pushed(void *params) {
 	}
 }
 
-void ST7789(void *pvParameters)
-{
-	TFT_t dev;
-
-	dev = *((TFT_t *)pvParameters);
-
-	
-	while(1) {
-
-		FillTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-		WAIT;
-
-//		ColorBarTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		ArrowTest(&dev, fx16G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		LineTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		CircleTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-
-//		RoundRectTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		RectAngleTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		TriangleTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		if (CONFIG_WIDTH >= 240) {
-//			DirectionTest(&dev, fx24G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		} else {
-//			DirectionTest(&dev, fx16G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		}
-//		WAIT;
-//
-//		if (CONFIG_WIDTH >= 240) {
-//			HorizontalTest(&dev, fx24G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		} else {
-//			HorizontalTest(&dev, fx16G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		}
-//		WAIT;
-//
-//		if (CONFIG_WIDTH >= 240) {
-//			VerticalTest(&dev, fx24G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		} else {
-//			VerticalTest(&dev, fx16G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		}
-//		WAIT;
-//
-//		FillRectTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		ColorTest(&dev, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		CodeTest(&dev, fx32G, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		CodeTest(&dev, fx32L, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//		char file[32];
-//		strcpy(file, "/spiffs/image.bmp");
-//		BMPTest(&dev, file, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//
-//#ifndef CONFIG_IDF_TARGET_ESP32S2
-//		strcpy(file, "/spiffs/esp32.jpeg");
-//		JPEGTest(&dev, file, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-//#endif
-//
-//		strcpy(file, "/spiffs/esp_logo.png");
-//		PNGTest(&dev, file, CONFIG_WIDTH, CONFIG_HEIGHT);
-//		WAIT;
-
-		// Multi Font Test
-		uint16_t color;
-		uint8_t ascii[40];
-		uint16_t margin = 0;
-		lcdFillScreen(&dev, TFT_BLACK);
-		color = TFT_WHITE;
-		lcdSetFontDirection(&dev, 0);
-		uint16_t xpos = 0;
-		uint16_t ypos = 15;
-		int xd = 0;
-		int yd = 1;
-		if(CONFIG_WIDTH < CONFIG_HEIGHT) {
-					lcdSetFontDirection(&dev, 1);
-					xpos = (CONFIG_WIDTH-1)-16;
-					ypos = 0;
-					xd = 1;
-					yd = 0;
-				}
-				strcpy((char *)ascii, "16Dot Gothic Font");
-				lcdDrawString(&dev, fx16G, xpos, ypos, ascii, color);
-
-				xpos = xpos - (24 * xd) - (margin * xd);
-				ypos = ypos + (16 * yd) + (margin * yd);
-				strcpy((char *)ascii, "24Dot Gothic Font");
-				lcdDrawString(&dev, fx24G, xpos, ypos, ascii, color);
-
-				if (CONFIG_WIDTH >= 135) {
-					xpos = xpos - (32 * xd) - (margin * xd);
-					ypos = ypos + (24 * yd) + (margin * yd);
-					strcpy((char *)ascii, "32Dot Gothic Font");
-					lcdDrawString(&dev, fx32G, xpos, ypos, ascii, color);
-				}
-
-				xpos = xpos - (10 * xd) - (margin * xd);
-				ypos = ypos + (10 * yd) + (margin * yd);
-				strcpy((char *)ascii, "16Dot Mincyo Font");
-				lcdDrawString(&dev, fx16M, xpos, ypos, ascii, color);
-
-				xpos = xpos - (24 * xd) - (margin * xd);;
-				ypos = ypos + (16 * yd) + (margin * yd);
-				strcpy((char *)ascii, "24Dot Mincyo Font");
-				lcdDrawString(&dev, fx24M, xpos, ypos, ascii, color);
-
-				if (CONFIG_WIDTH >= 135) {
-					xpos = xpos - (32 * xd) - (margin * xd);;
-					ypos = ypos + (24 * yd) + (margin * yd);
-					strcpy((char *)ascii, "32Dot Mincyo Font");
-					lcdDrawString(&dev, fx32M, xpos, ypos, ascii, color);
-				}
-
-		lcdSetFontDirection(&dev, 0);
-		WAIT;
-
-	} // end while
-
-	// never reach
-	while (1) {
-		vTaskDelay(2000 / portTICK_PERIOD_MS);
-	}
-}
 
 
 void display_date_time( TFT_t *dev ) {
