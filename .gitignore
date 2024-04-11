@@ -1,3 +1,7 @@
 /esp_idf_components/
 /build/
+/.settings/
 /sdkconfig.old
+/.project
+/.gitignore
+/.cproject 
