@@ -347,7 +347,7 @@ void app_main(void)
 
 	lcdDrawRect(&dev, 0, 100, CONFIG_WIDTH-1, 130, TFT_YELLOW);
 	ascii[0]=0;
-	strcpy((char *)ascii, "OLD Version");
+	strcpy((char *)ascii, " Ver. 1.0");
 //	strcpy((char *)ascii, "NEW Version");
 	lcdDrawString(&dev, fx24G, 2, 126, ascii, TFT_WHITE);
 
@@ -357,6 +357,6 @@ void app_main(void)
 
 	    	display_date_time(&dev);
 
-	        vTaskDelay( 100 );
+	        vTaskDelay( 500 );
 	    }
 }
